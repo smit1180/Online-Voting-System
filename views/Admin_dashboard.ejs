@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Admin Dashboard</title>
+
+	<link rel="stylesheet" type="text/css"    href="C:\Users\Admin\Desktop\DOC\html\bootstrap\bootstrap-4.4.1-dist\css\bootstrap.min.css">
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+	<link rel="stylesheet" type="text/css" href="/views/Admin_dashboard_css.css">
+
+	<style>
+		#btnclick,#confirmid
+		{
+			display: none;
+		}
+
+		#start,#stop,#reset,#Generateresultbtn
+		{
+			display: none;
+		}
+		#Generateresutpdf
+		{
+			display: none;
+		}
+	</style>
+
+
+	<script type="text/javascript">
+
+		var result_generated = 0;
+			function showStateList()
+			{
+				var state = document.getElementById("State_list").value;
+				const collection = document.getElementsByClassName("city_list");
+					for (let i = 0; i < collection.length; i++)
+					{
+						collection[i].style.display = "none";
+					}
+
+					if(state === "Gujarat")
+					{
+						document.getElementById('guj_city_list').style.display = "block";
+					}
+					else if(state === "Rajasthan")
+					{
+						document.getElementById('raj_city_list').style.display = "block";
+					}
+					else if(state === "Maharashtra")
+					{
+						document.getElementById('mh_city_list').style.display = "block";
+					}
+			}
+
+			function btnclick(btnid)
+				{
+
+						var btnid = btnid;
+						// alert("btnfunctioncall "+btnid);
+						
+						var id = document.getElementsByClassName("manageprocess");
+						if (id.length > 0) 
+						{
+							// alert (id[0].value);
+
+
+
+
+							if(id[0].value === "START" && btnid === "start")
+							{
+								let text;
+								if (confirm("Are you sure you want to '"+ btnid + "' voting process?") == true) 
+								{
+									// document.getElementById("confirmid").value =  "true";
+									document.getElementsByClassName("manageprocess")[0].value = "true";
+									document.getElementById("addcandidatebtn").disabled = true;
+									document.getElementById("editcandidatebtn").disabled = true;
+									// alert("Voting process has been started");
+								}
+								else 
+								{
+									// alert("Start Voting process cancelled");
+							    }
+							}
+							else if(id[1].value === "STOP" && btnid === "stop")
+							{
+								let text;
+								if (confirm("Are you sure you want to '"+ btnid + "' voting process?") == true) 
+								{
+									text = "You pressed OK!";
+									// document.getElementById("confirmid").value =  "true";
+									document.getElementsByClassName("manageprocess")[1].value = "true";		
+								}
+								else 
+								{
+							           text = "You canceled!";
+									// alert("Stop Voting process cancelled");
+							    }
+							}
+							else if(id[2].value === "RESET" && btnid === "reset")
+							{
+								var data = document.getElementById('fetchpdata').innerHTML;
+								// alert(data + "  length = " + data.length);
+								if(data.length < 56 && data.length >= 53)
+								{
+									alert("You can't reset voting process now. Voting Process is going on.");
+								}
+								
+								
+								else
+								{
+									
+									let text;
+									if (confirm("Are you sure you want to '"+ btnid + "' voting process?") == true) 
+									{
+										text = "You pressed OK!";
+										
+										document.getElementsByClassName("manageprocess")[2].value = "true";
+										
+									}
+									else 
+									{
+										text = "You canceled!";
+										
+									}
+								}
+							}
+						}
+				}
+				function alertbox()
+				{
+					alert("admin dashboard");
+				}
+
+
+				function managecandidate(btnid)
+				{
+					// alert(btnid);
+					var data = document.getElementById('fetchpdata').innerHTML;
+					// alert(data + "  length = " + data.length);
+
+								if(data.length < 56 && data.length >= 53)
+								{
+									// alert(data + "  length = " + data.length);
+									if(btnid === "Generateresultbtn")
+									{
+										alert("You can't Generate Result now. Voting Process is going on.");
+									}
+									else if(btnid === "addcandidatebtn")
+									{
+										alert("You can't add candidate now. Voting Process is going on.");
+									}
+									else if(btnid === "editcandidatebtn")
+									{
+										alert("You can't edit candidate details now. Voting Process is going on.");
+									}
+									else if(btnid === "removecandidateform")
+									{
+										alert("You can't remove candidate details now. Voting Process is going on.");
+									}
+									// alert("You can't reset voting process now. Voting Process is going on.");
+									document.getElementById("start").style.display = "none";
+									document.getElementById("reset").style.display = "none";
+								}
+								else if(data.length > 51 && data.length < 53)
+								{
+									if(btnid === "Generateresultbtn")
+									{
+										result_generated = 1;
+										document.getElementById("Generateresutpdf").value = "ok";
+
+										window.open('http://127.0.0.99:3000/VotingResult',"_self");
+									}
+									else if(btnid === "addcandidatebtn")
+									{
+										window.open('http://127.0.0.99:3000/Add_Candidate',"_self");
+									}
+									else if(btnid === "editcandidatebtn")
+									{
+							
+										window.open('http://127.0.0.99:3000/Edit_Candidate',"_self");
+									}
+									else if(btnid === "removecandidateform")
+									{
+										
+									}
+									document.getElementById("stop").style.display = "none";
+									document.getElementById("reset").style.display = "none";
+								}
+								else if(data.length > 70)
+								{
+									if(btnid === "Generateresultbtn")
+									{
+										window.open('http://127.0.0.99:3000/VotingResult',"_self");
+									}
+									else if(btnid === "addcandidatebtn")
+									{
+										// alert("You can't add candidate now. First Reset voting process.");
+									}
+									else if(btnid === "editcandidatebtn")
+									{
+										// alert("You can't edit candidate details now. First Reset voting process.");
+									}
+									else if(btnid === "removecandidateform")
+									{
+										// alert("You can't remove candidate details now. First Reset voting process.");
+									}
+
+									document.getElementById("start").style.display = "none";
+									document.getElementById("stop").style.display = "none";
+								}
+								else
+								{
+									if(btnid === "Generateresultbtn")
+									{
+										window.open('http://127.0.0.99:3000/VotingResult',"_self");
+									}
+									else if(btnid === "addcandidatebtn")
+									{
+										window.open('http://127.0.0.99:3000/Add_Candidate',"_self");
+									}
+									else if(btnid === "editcandidatebtn")
+									{
+										window.open('http://127.0.0.99:3000/Edit_Candidate',"_self");
+									}
+									else if(btnid === "removecandidateform")
+									{
+										
+									}
+								}
+				}
+
+
+				function hidebtn()
+				{
+					var data = document.getElementById('fetchpdata').innerHTML;
+					if(data.length < 56 && data.length >= 53)
+								{
+									
+									
+									document.getElementById("start").style.display = "none";
+									document.getElementById("reset").style.display = "none";
+									document.getElementById("stop").style.display = "block";
+									document.getElementById("Generateresultbtn").style.display = "none";
+									document.getElementById("addcandidatebtn").disabled = true;
+									document.getElementById("editcandidatebtn").disabled = true;
+									document.getElementById("remove_candidate_form").disabled = true;
+									document.getElementById("remove-Candidate-btn").disabled = true;
+								}
+								
+								else if(data.length > 51 && data.length < 53)
+								{
+									document.getElementById("stop").style.display = "none";
+									document.getElementById("reset").style.display = "none";
+									document.getElementById("start").style.display = "block";
+									document.getElementById("Generateresultbtn").style.display = "none";
+									document.getElementById("addcandidatebtn").disabled = false;
+									document.getElementById("editcandidatebtn").disabled = false;
+									document.getElementById("remove_candidate_form").disabled = false;
+									document.getElementById("remove-Candidate-btn").disabled = false;
+								}
+								else if(data.length > 70)
+								{
+									document.getElementById("start").style.display = "none";
+									document.getElementById("stop").style.display = "none";
+									document.getElementById("reset").style.display = "block";
+									document.getElementById("Generateresultbtn").style.display = "block";
+									document.getElementById("addcandidatebtn").disabled = true;
+									document.getElementById("editcandidatebtn").disabled = true;
+									document.getElementById("remove_candidate_form").disabled = true;
+									document.getElementById("remove-Candidate-btn").disabled = true;
+								}
+								else
+								{
+									document.getElementById("stop").style.display = "none";
+									document.getElementById("reset").style.display = "none";
+									document.getElementById("start").style.display = "block";
+									document.getElementById("Generateresultbtn").style.display = "none";
+									document.getElementById("addcandidatebtn").disabled = false;
+									document.getElementById("editcandidatebtn").disabled = false;
+									document.getElementById("remove_candidate_form").disabled = false;
+									document.getElementById("remove-Candidate-btn").disabled = false;
+								}
+				}
+	</script>
+
+</head>
+
+<body onload="hidebtn()">
+	<div class="header">
+			
+			<img src="/views/evote2.jpg">
+
+		<div class="dashboard">
+			<p>Admin's Dashboard</p>
+		</div>
+		<div class="manage-voting-process">
+
+			<form action="/startvotingprocess" method="post">
+
+				<input type="text" name="confirm" id="confirmid" value="START" class="manageprocess">
+				<button  class="header-btn" id="start" type="submit" onclick="btnclick(this.id)">Start</button>
+
+			</form>
+				
+			<form action="/stopvotingprocess" method="post">
+
+
+				<input type="text" name="confirm" id="confirmid" value="STOP" class="manageprocess">
+				<button  class="header-btn" id="stop" type="submit" onclick="btnclick(this.id)">Stop</button>
+
+			</form>
+
+			<form action="/resetvotingprocess" method="post">
+
+				<input type="text" name="confirm" id="confirmid" value="RESET" class="manageprocess">
+				<button class="header-btn" id="reset" type="submit" onclick="btnclick(this.id)"> Reset</button>
+
+			</form>
+				
+		</div>
+
+			<div class="votingprocesslabel">
+				<p>Voting Process</p>
+			</div>
+
+		<div class="logout">
+			<form action="/logout" method="post">
+				<button class="header-btn" id="logout-btn">Logout</button>
+			</form>
+		</div>
+
+	</div>
+
+	<h3>
+			
+		<% if(adminid.length > 0) { %>
+			<p class="alert alert-success" id="fetchpdata">
+				<%= adminid %>
+			</p>
+			
+		  <% }%>
+	</h3>
+	<div class="content">
+		<div class="remove-Candidate-form" id="remove_candidate_form">
+
+			<form class="fill-form-details" method="post" action="/removecandidate" id="removecandidateform" onclick="managecandidate(this.id)">
+				<div class="Candidate-profile-img" id="img">
+					<img src="/views/admin_img.png" width="150" height="150" class="rounded-circle">
+				</div>
+
+				<div class="Candidate-details-items">
+					<div class="lbl">
+						<label class="lb" id="party_name">Party Name  </label>
+					</div>
+					<div class="lbl">
+						<select name="party_name" id="party_name_input">
+							<option value="BJP">BJP</option>
+							<option value="CPI">CPI</option>
+							<option value="INC">INC</option>
+							<option value="CPI(M)">CPI(M)</option>
+							<option value="NCP">NCP</option>
+							<option value="NPP">NPP</option>
+							<option value="BSP">BSP</option>
+							<option value="AITC">AITC</option>
+						</select>
+					</div>
+					<div class="lbl">
+						<label class="lb" id="name">Name     </label>
+					</div>	
+					<div class="lbl">
+						<input type="text" name="name" required>
+					</div>
+					<div class="lbl">
+						<label class="lb" id="State">State    </label>
+					</div>
+					<div class="lbl">
+						<select name="states" id="State_list" onclick="showStateList()" name = "state_name">
+							<option value="Gujarat">Gujarat</option>
+							<option value="Rajasthan">Rajasthan</option>
+							<option value="Maharashtra">Maharashtra</option>
+						</select>
+					</div>
+					<div class="lbl">
+						<label class="lb" id="City">City    </label>
+					</div>
+					<div class="lbl" >
+
+						<div id="guj_city_list" class="city_list" name="city_name">
+
+									<div id="city_list">
+										<select name="city" onclick="showCityList()" id="guj_city_list">
+											<option></option>
+											<option>Ahemdabad</option>
+											<option>Anand</option>
+											<option>Nadiad</option>
+											<option>Surat</option>
+											<option>Vadodara</option>
+										</select>
+									</div>
+
+						</div>
+
+						<div id="raj_city_list" class="city_list" name="city_name">
+									<div  id="city_list">
+										<select name="city" onclick="showCityList()" id='raj_city_list'>
+											<option></option>
+											<option>Abu</option>
+											<option>Ajmer</option>
+											<option>Jaipur</option>
+										</select>
+									</div>
+						</div>
+
+						<div id="mh_city_list" class="city_list" name="name_city_list">
+							<div  id="city_list">
+								<select name="city" onclick="showCityList()" id='mh_city_list'>
+									<option></option>
+									<option>Amravati</option>
+									<option>Nasik</option>
+									<option>Mumbai</option>
+									<option>Pune</option>
+								</select>
+							</div>
+						</div>
+					</div>
+					
+				</div>
+				<div class="remove-Candidate-btn">
+					<button type="submit" class="btn btn-danger btn-lg" id="remove-Candidate-btn">Remove Candidate</button>
+				</div>
+			</form>
+		</div>
+
+		<div class="viewpastresult" id="viewpastresultresultid">
+			<!-- <hr> -->
+			<h3 id="resultmess">Search Past Result</h3>
+			<hr>
+			<form method="post" action="/searchresult">
+				
+				<div class="rlbl">
+					<label class="lb">Enter Date</label>
+				</div>
+				<div class="rlbl">
+					<input type="date" id="selectdateid" class="lb" name="date">
+				</div> 
+
+				<button type="submit" class="btn btn-primary btn-lg" id="search_result_btn" required>Search Result</button>
+
+			</form>
+			<form action="/viewfullpastresult" method="post">
+				<button type="submit" class="btn btn-primary btn-lg" id="view_full_past_result" required>View Full Past Result</button>
+			</form>
+
+		</div>
+
+
+	</div>
+
+	
+
+	<div class="footer">
+		<div class="footer-btn">
+
+			<input type="text" value="not" id="Generateresutpdf">
+			<button class="fbtn"  id="Generateresultbtn" onclick="managecandidate(this.id)">Generate Result</button>
+			<button class="fbtn"  id="addcandidatebtn" onclick="managecandidate(this.id)">Add Candidate</button>		
+			<button class="fbtn"  id="editcandidatebtn" onclick="managecandidate(this.id)">Edit Candidate</button>	
+			<button class="fbtn" onclick="location.href = 'http://127.0.0.99:3000/ShowAddedCandidate'" id="viewaddedcandidatebtn">View Added Candidate</button>
+		</div>
+	
+	</div>
+
+</body>
+
+</html>

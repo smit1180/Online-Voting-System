@@ -1,0 +1,278 @@
+body
+{
+	background: white;
+	padding: 10px;
+}
+.header
+{
+	position: fixed;
+	top: 0px;
+	z-index: 1030;
+	width: 100%;
+	height: 90px;
+	background: #064e89;
+	background-color: #156ab0;
+	background-color: #187ed2;
+	display: inline-flex;
+}
+
+
+.img{
+    width: 220px;
+    height: 90px;
+    position: absolute;
+    left: 4%;
+}
+
+.admin-img
+{
+	width: 20px;
+}
+.dashboard
+{
+	position: relative;
+	position:absolute;
+	top: 15px;
+	left: 20%;
+	font-family: cursive;	
+	font-size: 40px;
+	color: white;
+	justify-content: center;
+}
+
+.header-btn
+{
+	position: relative;
+	position: absolute;
+
+	top: 30%;
+	left: 70%;
+
+	background: white;
+	font-weight: bolder;
+	border-radius: 5px;
+
+	background: white;
+	border: 10px;
+	font-size: 20px;
+}
+
+.votingprocesslabel
+{
+	position: relative;
+	position:absolute;
+	top: 20%;
+	left: 66%;
+	font-family: cursive;	
+	font-size: 30px;
+	color: white;
+	justify-content: center;
+}
+
+#fetch_AdminID
+{
+	position: relative;
+	top: 30px;
+	width: 110px;
+}
+
+.manage-voting-process
+{
+	position: relative;
+	left: 200px;
+	width: 600px;
+	display: inline-flex;
+}
+
+h4
+{
+	position: relative;
+	top: 40px;
+	font-family: cursive;
+	color: white;
+}
+.logout
+{
+	position:absolute;
+	left: 90%;
+	top: 30%;
+}
+
+.alert
+{
+	position: relative;
+	position: fixed;
+	top: 0px;
+	z-index: 1030;
+	width: 100%;
+	top: 92px;
+}
+/* --------------------------------------------------------------------------------------------------- */
+.content
+{
+	position: relative;
+	top: 110px;
+	width: 100%;
+	height: 500px;
+	margin-bottom: 20px;
+
+	position: relative;
+	display: inline-flex;
+}
+
+/*-----------------------  remove-Candidate-form starts from here ------------------------------------*/
+
+.remove-Candidate-form
+{
+	position: relative;
+	top: 50px;
+	left: 15px;
+    width: 720px;
+    height: 430px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 3px 3px 10px #000;
+    background-color: #e5eef6;
+    background-color: #215d8f73;
+}
+
+#img
+{
+	position: relative;
+	left: 38%;
+	top: 40px;
+}
+.Candidate-details-items
+{
+
+	position: relative;
+	top: -200px;
+	left: 20px;
+	display: grid;
+	grid-template-columns: repeat(4,150px);
+	grid-gap: 10px;
+}
+
+.lb
+{
+	position: relative;
+	left: 20px;
+	font-size: 20px;
+	font-weight: bolder;
+}
+.lbl
+{
+	position: relative;
+	top: 250px;
+	margin-top: 20px;
+}
+
+.party-name-input
+{
+	position: relative;
+	top: 15px;
+}
+
+
+.city_list
+{
+	position: relative;
+	display: none;
+}
+.remove-Candidate-btn
+{
+	position: relative;
+	top: 100px;
+	left: 35%;
+	width: auto;
+	height: auto;
+}
+
+
+
+.viewpastresult
+{
+	position: relative;
+	left: 150px;
+	top: 70px;
+	background-color: #215d8f73;
+	width: 400px;
+	height: 400px;
+	border-radius: 10px;
+    box-shadow: 3px 3px 10px #000;
+}
+
+hr
+{
+	height: 10px;
+	size: 10px;
+	background-color: red;
+}
+.rlbl
+{
+	position: relative;
+	left: 18%;
+	top: 20px;
+	margin-top: 20px;
+}
+
+#search_result_btn
+{
+	position: relative;
+	left: 120px;
+	top: 60px;
+}
+
+#resultmess
+{
+	position: relative;
+	left: 20%;
+	margin-top: 20px;
+	margin-bottom: 20px;
+	font-weight: bolder;
+	color: rgb(46, 44, 44);
+}
+
+#view_full_past_result
+{
+	position: relative;
+	top: 40%;
+	top: 100px;
+	left: 23%;
+}
+
+/*-----------------------  Add-Candidate-form ends here ------------------------------------*/
+
+/* ---------------------------------------------------------------------------------------------------------- */
+.footer
+{
+	position: relative;
+	top:90px;
+	width: 100%;
+	height:90px;
+	background: #064e89;
+	background-color: #156ab0;
+	padding: 30px;
+}
+
+.footer-btn
+{
+	position: absolute;
+	display: inline-flex;
+	top: 20%;
+	left: 30%;
+	justify-content: center;
+}
+
+.fbtn
+{
+	position: relative;
+	width: 150px;
+	top: -5px;
+	margin-right: 20px;
+	font-size: 20px;
+	font-weight: bold;
+	border-radius: 10px;
+}
+
+

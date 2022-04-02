@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>
+		Registration Form
+	</title>
+
+<link rel="stylesheet" type="text/css"    href="C:\Users\Admin\Desktop\DOC\html\bootstrap\bootstrap-4.4.1-dist\css\bootstrap.min.css">
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+
+<link rel="stylesheet" type="text/css" href="/views/Voter_Registration_form_css.css">
+
+</head>
+<body id="bd">
+	<div class="header-bar">
+        <img src="/views/evote2.jpg" class="header-img">
+    </div>
+<div class="main">
+
+	<!-- -------------------------------------------------------- -->
+
+	<div class="container-fluid" id="cont-fluid">	<!-- ---------------- main division container ------------- -->
+		
+		<div class="img" id="image">
+			<p></p>
+		</div>
+		<div class="form">
+			<div class="header" id="reg-form">
+			Registration Form
+			
+			</div>
+			<div class="read-details">
+
+				<h2><button id="popup" onclick="openTAC()">click here to read Terms And Conditions</button></h2> 
+				
+			</div>
+			<!-- -------- form filling ------------------------- -->
+			<form action="/register" method="post">
+				<% if(message.length > 0) { %>
+					<div class="alert alert-danger"> 
+					  <%= message %>
+					</div>
+				  <% }%>
+				<div class="grid-items" id="grid">
+					<div class="form-items">Name
+						<br>
+						<input type="text" name="name" placeholder="Enter Name as per Voter ID" size="35px" required>
+					</div>
+					<div class="form-items">Date of Birth
+						<br>
+						<input type="Date" name="DOB" placeholder="DOB" required>
+					</div>
+					<div class="form-items">Aadhaar number
+						<br>
+						<input type="number" name="aadhaarno" placeholder="aadhaar number" min="111111111111" max="999999999999" required>
+					</div>
+					<div class="form-items">Pan Number
+						<br>
+						<input type="text" name="panno" placeholder="Pan Number" required>
+					</div>
+					<div class="form-items">Voter Id
+						<br>
+						<input type="text" placeholder="Enter your Voter ID" name="voterid" required>
+					</div>
+					<div class="form-items">Email
+						<br>
+						<input type="email" name="email" placeholder="Enter your email address" size="40px" required>
+					</div>
+					<div class="form-items">Password
+						<br>
+						<input type="password" name="password" placeholder="Enter Password" required>
+					</div>
+					<div class="form-items">Confirm Password
+						<br>
+						<input type="password" name="confirmpassword" placeholder="Re-enter Password" required>
+					</div>
+					
+					
+					<div class="form-items">
+					
+						<button type="submit" class="btn btn-info disable" id="Submit-btn" >Proceed</button>
+					</div>
+					<div class="form-items">
+						<br>
+					</div>
+					
+				</div>
+				<a href="http://127.0.0.98:3000/home/login" id="alradyregistered">Already Registered? Login here</a>
+				<br>
+			</form>
+			<!-- ----------- form filling ends ------------------ -->
+
+			<!-- ---------------- terms-and-conditions ends ----------------- -->
+				<div id="terms-and-conditions">
+					<h2 class="TAC">Terms And Conditions</h2>
+					<p class="TAC-STATEMENTS">				   
+					   <p>1. Voter should have Voter ID and Aadhar Card and make sure you enter correct details.</p>
+					   <p>2. You will get OTP on your Mobile Number which is linked to your Aadhar Card and you have to entered recieved OTP correctly.<br></p>
+					   <p>3. You will get Verification Code through email and make sure you enter correct email in Registration Form.<br></p>
+					   <h4 id="Remember-password-st">Please Remember the PASSWORD you enter in Registration Form which is use to Login at the time of Voting.</h4>
+					   <br><br>
+					</p>
+					<div>
+						<button class="btn-primary" id="accept" onclick="closeTAC()">Accept</button>
+					</div>
+				</div>
+			<!-- ---------------- terms-and-conditions ----------------- -->
+		</div>
+	</div>
+
+
+	<div class="successfully-registered" id="successfull-register">
+		<h2>Your Registration Form has been received successfully.</h2>
+		
+		<h3 id="dont-forg-to-vote">Don't Forget to Vote on &nbsp<spam class="date">21/01/2022</spam></h3> 
+		
+		<h4 id="thank-you">Thank you for Registration.</h4>
+		<br>
+		<br>
+		<br><br>
+		<br>
+		<p><a  id="other-registration" target="_blank">Click here for Registration of other voter</a></p>
+	</div>
+</div>	 <!-- main div ends here -->
+
+<!-- JavaScript for popup terms and condition function call  -->
+<script type="text/javascript">
+	var count = 0;
+	function openTAC()
+	{
+		document.getElementById("terms-and-conditions").style.display = "block";
+		document.getElementById("grid").style.opacity = 0.5;
+		document.getElementById("image").style.opacity = 0.5;
+		document.getElementById("reg-form").style.opacity = 0.5;
+		document.getElementById("popup").style.opacity = 0.5;
+	}
+	function closeTAC()
+	{
+		document.getElementById("terms-and-conditions").style.display = "none";
+		document.getElementById("grid").style.opacity = 1;
+		document.getElementById("image").style.opacity = 1;
+		document.getElementById("reg-form").style.opacity = 1;
+		document.getElementById("popup").style.opacity = 1;
+	}
+	function submitForm()
+	{
+		document.getElementById("successfull-register").style.display = "block";
+		document.getElementById("cont-fluid").style.display = "none";
+		document.getElementById("bd").style.background = "white";
+	}
+
+	// togglesidebar
+	function togglesidebar()
+		{
+					document.getElementById("sidebar").classList.toggle('active');
+					document.getElementById("cont-fluid").style.transition = "all 250ms linear";	
+		}
+
+		function afterSuccessfullSubmission()
+		{
+			document.getElementById('cont-fluid').style.display = "none";
+			document.getElementById('successfull-register').style.display = "block";
+			document.getElementById('bd').style.background = "white";
+		}
+
+</script>
+
+</body>
+</html>

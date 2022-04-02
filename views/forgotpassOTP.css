@@ -1,0 +1,70 @@
+body
+{
+	height: 100%;
+    background-color: #327bb873;
+}
+
+.alert{
+    background-color: rgb(243, 103, 103);
+    position: relative;
+    font-size: 15px;
+    /* top: 100px; */
+
+}
+
+/* /-----------------------  header css starts from here ------------------------------------/ */
+
+.header{
+    width: 1348px;
+    width: 100%;
+    height: 90px;
+    background: #fff;
+    background-color: #187ed2;
+    color: #000;
+    top: 0%;
+    position: relative;
+}
+
+.img{
+    width: 220px;
+    height: 90px;
+    position: absolute;
+    left: 4%;
+}
+
+form
+{
+    position: relative;
+    top: 40%;
+    top: 35%;
+	left: 35%;
+    width: 450px;
+    padding: 30px;
+    background-color: #0c3a6e67;
+    border-radius: 20px;
+    box-shadow: 3px 3px 10px black;
+}
+
+.verify_otp_code
+{
+    position: relative;
+	display: grid;
+	grid-template-columns: repeat(2,250px);
+	grid-gap: 30px;
+
+    padding: 30px;
+}
+
+.lb
+{
+    font-size: 25px;
+    font-weight: bolder;
+    font-family: cursive;
+}
+
+.btn
+{
+    position: relative;
+    left: 200px;
+    left: 45%;
+}

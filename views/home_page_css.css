@@ -1,0 +1,561 @@
+
+body
+{
+	margin: 0px;
+	padding: 0px;
+}
+
+/*-----------------------  header css starts from here ------------------------------------*/
+.header
+{
+	position: sticky;
+	top: 0px;
+	z-index: 1030;
+	width: 100%;
+	height: 77px;
+	background: white;
+	display: inline-flex;
+}
+
+.header p
+{
+	position: relative;
+	left: 50px;
+	font-family: cursive;	
+}
+
+.EVoting
+{
+	text-shadow: 3px 3px 7px blue;
+}
+.marquee
+{
+	margin-left: 40px;
+	margin-right: 40px;
+	width: 800px;
+	background: black;
+	height: 50px;
+	position: relative;
+	left: 50px;
+	border-radius: 5px;
+}
+
+#float
+{
+	position: relative;
+	top: 10px;
+	left: -20px;
+	font-size: 30px;
+	width: auto;
+}
+/* ------------------------------ display counter starts ---------------------------- */
+.time
+{
+	position: relative;
+	left: 160px;
+	display: inline-flex;
+	width: 900px;
+	display: none;
+}
+.voting-starts-in
+{
+	position: relative;
+	font-size: 30px;
+	top: 10px;
+	width: 250px;
+	height: 50px;
+	margin-left: 20px;
+	font-weight: bolder;
+}
+
+.showtimeblock
+{
+	position: relative;
+	left: 50px;
+	top: 5px;
+	display: grid;
+	grid-template-columns: 1fr 4fr 2fr;
+	grid-template-columns: repeat(1,400px);
+	border-radius: 10px;
+	height: 70px;
+	padding-right: 30px;
+	font-weight: bolder;
+}
+
+.counter
+{
+	position: relative;
+	display: inline-flex;
+}
+
+.counter h1
+{
+	position: relative;
+	width: 150px;
+}
+
+.dayshrsminssec
+{
+	position: relative;
+	display: inline-flex;
+	top: -30px;
+	left: 50px;
+
+}
+
+.dayshrsminssec h5
+{
+	position: relative;
+	width: 150px;
+}
+/* ------------------------------ display counter ends ---------------------------- */
+
+.marquee2
+{
+	margin-left: 40px;
+	margin-right: 40px;
+	width: 500px;
+	background-color: #156ab0;
+	height: 50px;
+	position: relative;
+	position:absolute;
+	left: 25%;
+	top: 20px;
+	border-radius: 5px;
+	color: white;
+}
+
+
+#float2
+{
+	position: relative;
+	position:absolute;
+	left: 25%;
+	font-size: 30px;
+	color: white;
+
+}
+
+#header-btn
+{
+	position: relative;
+	position:absolute;
+	top: 20px;
+	left:75%;
+}
+
+
+button
+{
+	background: black;
+	font-size: 30px;
+}
+
+#reg
+{
+	margin-right: 10px;
+}
+a
+{
+	color: white;
+	font-size: 20px;
+	list-style: none;
+	text-decoration: none;
+	font-weight: bolder;
+}
+
+a:hover
+{
+	color: #ffc107;
+	list-style: none;
+}
+
+/*-----------------------  header css ends here ------------------------------------*/
+
+/*----------------------- menu css starts from here ------------------------------------*/
+.menu
+{
+	position: fixed;
+	z-index: 1030;
+	top: 77px;
+	width: 100%;
+	height: 80px;
+	background: #064e89;
+	background-color: #156ab0;
+	color: black;
+	display: block;
+	color: white;
+	list-style: none;
+}
+
+ul li
+{
+	list-style: none;
+	margin: 15px;
+	width: auto;
+}
+
+.sub-menu-1
+{
+	position: relative;
+	left: 10px;
+	display: none;
+	list-style: none;
+}
+.menu ul 
+{
+	display: inline-flex;
+	list-style: none;
+	color: white;
+	list-style: none;
+}
+.menu ul li ul
+{
+	display: block;	
+	list-style: none;
+	color: white;
+}
+
+.menu ul li:hover .sub-menu-1
+{
+	display: list-item;
+	position: relative;
+	left: 30px;
+	background: #064e89;
+	background: #0078db;
+	margin-left: -20px;
+	border-bottom-right-radius: 10px;
+	border-bottom-left-radius: 10px;
+	width: 200px;
+	list-style: none;
+}
+
+.menu ul li:hover .sub-menu-1 ul li
+{
+	display: list-item;
+	padding: 2px;
+	width: 100px;
+	border-bottom: 1px dotted white;
+	background: transparent;
+	border-radius: 0;
+	list-style: none;
+}
+
+.menu ul li:hover .sub-menu-1 ul li:last-child /* to remove dotted line from last option*/
+{
+	border-bottom: none;
+}
+
+.menu p
+{
+	position: relative;
+	left: 50px;
+	font-family: cursive;	
+	font-size: 30px;
+	color: red;
+}
+
+.bar-items
+{
+	position: relative;
+	top: 10px;
+}
+
+
+#float1
+{
+	font-size: 30px;
+}
+
+#searchresult
+{
+	position:absolute;
+	left: 67%;
+	display: inline-flex;
+	width: 700px;
+}
+
+#enterdatelable
+{
+	width: 200px;
+}
+
+.rlbl
+{
+	position: relative;
+	top: 25px;
+	margin-left: 15px;
+}
+#enterdatelable
+{
+	/* width: 200px; */
+	position: relative;
+	margin-right: -30px;
+	top: 10px;
+}
+
+.lb
+{
+	font-style: normal;
+}
+.alert
+{
+	position: relative;
+	top: 80px;
+}
+
+/*-----------------------  header css ends here ------------------------------------*/
+
+.flash
+{
+	background-color: brown;
+	color: white;
+}
+
+
+/*----------------------- description css starts from here ------------------------------------*/
+
+.description
+{
+	position: relative;
+	top: 70px;
+
+	width: 100%;
+	height: 600px;
+	margin-top: 10px;
+	padding-left: 15px;
+	padding-right: 15px;
+
+	background:green;
+	background: white;
+
+	background-size: 1600px 600px;
+	background-repeat: no-repeat;
+	box-shadow: 3px 3px 10px black;
+
+	animation-name: change-img;
+	animation-duration: 10s;
+	animation-iteration-count: infinite;
+	transition-timing-function: ease-in;
+	background-image: url(desc_img3.jpg);
+}
+
+.img-content
+{
+	position: relative;
+	padding-right: 200px;
+	font-size: 50px;
+	font-family: cursive;
+	font-weight: bolder;
+	color: white;
+	text-shadow: 2px 3px 10px red;
+}
+
+
+.description p
+{
+	width: 1100px;
+	position: relative;
+	left: 200px;
+	top: 275px;
+	align-content: center;
+	justify-content: center;
+	align-items: center;
+}
+
+@keyframes change-img
+{
+		0%
+		{
+			color: red;
+			font-family: initial;
+			text-shadow: 2px 3px 30px red;
+			background: url(desc_img2.jpg);
+			font-size:10px;
+			background-size: 1600px 600px;
+			background-repeat: no-repeat;
+		}
+
+		50%
+		{
+			color: red;
+			font-family: initial;
+		
+			text-shadow: 2px 3px 30px red;
+			background: url(desc_img3.jpg);
+			font-size:10px;
+			background-size: 1600px 600px;
+			background-repeat: no-repeat;
+		}
+
+		100%
+		{
+			color: red;
+			font-family: initial;
+		
+			text-shadow: 2px 3px 30px red;
+			background: url(desc_img2.jpg);
+			font-size:10px;
+		
+			background-size: 1600px 600px;
+			background-repeat: no-repeat;
+		}
+}
+
+
+/*-----------------------  description css ends here ------------------------------------*/
+
+
+/*----------------------- below-description css starts from here ------------------------------------*/
+
+.below-description
+{
+	position: relative;
+	top: 150px;
+	padding-top: 20px;
+	padding-bottom: 20px;
+}
+
+.about-voting-heading
+{
+	position: relative;
+	padding-left: 450px;
+	top: 100px;
+	font-size: 100px;
+	font-family: cursive;
+	font-weight: bolder;
+}
+
+.content-of-About-eVote
+{
+	position: relative;
+	top: 150px;
+	padding: 20px;
+
+	display: inline-flex;
+	background:#b4c5f3;
+	background:white;
+	height: 800px;
+}
+
+.img-left-about-voting
+{
+	position: relative;
+	padding:20px;
+}
+
+.text-of-About-eVote
+{
+	position: relative;
+	top: 15px;
+	color: black;
+	font-size: 20px;
+}
+
+/*-----------------------  below-description css ends here ------------------------------------*/
+
+/*-----------------------  How-it-work css ends here ------------------------------------*/
+
+
+.Howitwork
+{
+	position: relative;
+	width: 100%;
+	padding-bottom: 20px;
+	border: 20px red;
+}
+
+.How-it-work-heading
+{
+	position: relative;
+	padding-left: 450px;
+	top: 100px;
+	font-size: 100px;
+	font-family: cursive;
+	font-weight: bolder;
+	border: 20px red;
+}
+
+.steps
+{
+	position: relative;
+	top: 110px;	
+	font-size: 2em;
+	padding-left: 200px;
+	margin: 20px;	
+}
+
+.steps .step-no 
+{
+	position: relative;
+	display: inline-flex;
+	margin-right: 30px;
+	margin-top: 30px;
+}
+
+.steps .step-no .stepimg
+{
+	position: relative;
+	margin-right: 30px;
+}
+
+
+.steps .step-no .step-content
+{
+	position: relative;
+	top: 20px;
+}
+spam
+{
+	font-size: 25px;
+	font-weight: bolder;
+	padding-right: 40px;
+}
+
+
+
+/*----------------------- footer css starts from here ------------------------------------*/
+
+.footer
+{
+	position: relative;
+	top: 150px;
+	width: 100%;
+	height: 170px;
+	display: inline-flex;
+	background: #064e89;
+	background-color: #156ab0;
+	align-content: center;
+	justify-content: center;
+}
+
+.footer .party
+{
+	display: grid;
+	grid-template-columns: 1fr 4fr 2fr;
+	grid-template-columns: repeat(8,100px);
+	grid-gap: 25px;
+}
+
+
+.labelparty
+{
+	display: block;
+	align-content: center;
+	text-align: center;
+	color: white;
+	padding-top: 10px;
+}
+.footer img
+{
+	position: relative;
+	left: -40px;
+	margin-top: 10px;
+	margin-left: 50px;
+	width: 100px;
+	height: 100px;
+}
+
+
+
+/*-----------------------  footer css ends here ------------------------------------*/

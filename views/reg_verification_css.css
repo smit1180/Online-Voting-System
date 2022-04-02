@@ -1,0 +1,69 @@
+
+body
+{
+	height: 100%;
+    background-color: #327bb873;
+}
+
+/*-----------------------  header css starts from here ------------------------------------*/
+
+.header
+{
+	position: relative;
+	position: fixed;
+	top: 0px;
+	z-index: 1030;
+	height: 70px;
+	background: white;
+	display: inline-flex;
+	background-color: #187ed2;
+	width: 100%;
+}
+
+.header-img
+{
+	width: 30px;	
+}
+.header-img
+{
+	position: relative;
+	left: 30px;
+}
+
+
+form
+{
+    position: relative;
+    top: 40%;
+    top: 35%;
+	left: 35%;
+    width: 450px;
+    padding: 30px;
+    background-color: #0c3a6e67;
+    border-radius: 20px;
+    box-shadow: 3px 3px 10px black;
+}
+
+.verify_otp_code
+{
+    position: relative;
+	display: grid;
+	grid-template-columns: repeat(2,250px);
+	grid-gap: 30px;
+
+    padding: 30px;
+}
+
+.lb
+{
+    font-size: 25px;
+    font-weight: bolder;
+    font-family: cursive;
+}
+
+.btn
+{
+    position: relative;
+    left: 200px;
+    left: 45%;
+}
